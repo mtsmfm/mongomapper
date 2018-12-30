@@ -27,6 +27,7 @@ MongoMapper is tested against:
 Additionally, MongoMapper is tested against:
 
 * Rails 4.2.x
+* Rails 5.0.x
 
 == Contributing & Development
 

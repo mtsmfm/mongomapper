@@ -5,3 +5,4 @@ ruby_versions:
 rails_versions:
   - "4.2"
   - "5.0"
+  - "5.1"

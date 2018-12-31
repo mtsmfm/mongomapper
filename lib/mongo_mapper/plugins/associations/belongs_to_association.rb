@@ -44,9 +44,9 @@ module MongoMapper
             end
           end
 
-          @model.after_save(method_name)
-          @model.after_touch(method_name)
-          @model.after_destroy(method_name)
+          @model.after_save(method_name.to_sym)
+          @model.after_touch(method_name.to_sym)
+          @model.after_destroy(method_name.to_sym)
         end
 
         def add_counter_cache

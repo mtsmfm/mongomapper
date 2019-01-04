@@ -13,8 +13,8 @@ references:
           docker cp . project:/app
           docker start project
           docker-compose build $SERVICE_NAME
-          docker-compose run $SERVICE_NAME bundle install
-          docker-compose run $SERVICE_NAME bundle exec rake
+          docker-compose run -e BUNDLE_GEMFILE=$BUNDLE_GEMFILE $SERVICE_NAME bundle install
+          docker-compose run -e BUNDLE_GEMFILE=$BUNDLE_GEMFILE $SERVICE_NAME bundle exec rake
 jobs:
 <%- data['ruby_versions'].product(data['rails_versions']).each do |ruby_version, rails_version| -%>
   test-ruby-<%= ruby_version.tr('.', '-') %>--rails-<%= rails_version.tr('.', '-') %>:

@@ -13,8 +13,8 @@ references:
           docker cp . project:/app
           docker start project
           docker-compose build $SERVICE_NAME
-          docker-compose run $SERVICE_NAME bundle install
-          docker-compose run $SERVICE_NAME bundle exec rake
+          docker-compose run -e BUNDLE_GEMFILE=$BUNDLE_GEMFILE $SERVICE_NAME bundle install
+          docker-compose run -e BUNDLE_GEMFILE=$BUNDLE_GEMFILE $SERVICE_NAME bundle exec rake
 jobs:
   test-ruby-2-4--rails-4-2:
     <<: *test

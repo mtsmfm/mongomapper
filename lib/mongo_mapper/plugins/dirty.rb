@@ -27,6 +27,10 @@ module MongoMapper
 
     private
 
+      def attribute_method?(attr_name)
+        keys.key?(attr_name)
+      end
+
       def write_key(key_name, value)
         key_name = unalias_key(key_name)
 
